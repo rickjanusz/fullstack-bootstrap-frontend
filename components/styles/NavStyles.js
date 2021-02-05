@@ -1,66 +1,93 @@
 import styled from 'styled-components';
 
 const NavStyles = styled.ul`
-  margin: 0;
-  padding: 0;
+  margin: 0 0 5rem 0;
+  padding: 0 5rem 0 0;
   display: flex;
   justify-self: end;
   font-size: 2rem;
+  transition: var(--transition);
   a,
   button {
-    padding: 1rem 3rem;
+    transition: color 0.4s;
+    padding: 1rem 1vw;
     display: flex;
     align-items: center;
     position: relative;
+    z-index: 1;
+    color: var(--orange);
     text-transform: uppercase;
     font-weight: 900;
     font-size: 1em;
     background: none;
     border: 0;
     cursor: pointer;
-    @media (max-width: 700px) {
-      font-size: 10px;
-      padding: 0 10px;
-    }
     &:before {
       content: '';
-      width: 2px;
-      background: var(--lightGray);
-      height: 100%;
+      height: 0;
+      width: 100%;
+      position: absolute;
       left: 0;
-      position: absolute;
-      transform: skew(-20deg);
-      top: 0;
-      bottom: 0;
+      z-index: -1;
+      background-color: var(--orange);
+      transform: rotate(-2deg);
+      transform-origin: center;
+      transition: all 0.4s;
+      transition-timing-function: cubic-bezier(1, -0.65, 0, 2.5);
+      box-shadow: 0 7px 5px -6px rgba(0, 0, 0, 0.5);
+      border-radius: 5px 0 5px 0;
     }
-    &:after {
-      height: 2px;
-      background: red;
-      content: '';
-      width: 0;
-      position: absolute;
-      transform: translateX(-50%);
-      transition: width 0.4s;
-      transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
-      left: 50%;
-      margin-top: 2rem;
-    }
-    &:hover,
-    &:focus {
+    &:hover {
+      text-decoration: none;
       outline: none;
-      &:after {
-        width: calc(100% - 60px);
+      color: white;
+      &:before {
+        height: 60%;
       }
-      @media (max-width: 700px) {
-        width: calc(100% - 10px);
-      }
+    }
+    &[aria-current],
+    .current,
+    .active {
+      color: white;
+      pointer-events: none;
     }
   }
   @media (max-width: 1300px) {
-    border-top: 1px solid var(--lightGray);
+    /* margin: 0; */
+    border-top: 1px solid white;
     width: 100%;
     justify-content: center;
-    font-size: 1.5rem;
+    transition: var(--transition);
+    padding: 0;
+    a,
+    button {
+      font-size: 2rem;
+      &:before {
+        width: 100%;
+        left: 0;
+      }
+      &:hover {
+        color: white;
+        &:before {
+          height: 50%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    a,
+    button {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+
+      &:hover {
+        color: black;
+        &:before {
+          height: 0%;
+        }
+      }
+    }
   }
 `;
 

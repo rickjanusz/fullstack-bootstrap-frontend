@@ -60,11 +60,11 @@ export default function Header() {
         <Logo>
           <Link href="/">Fullstack Bootstrap</Link>
         </Logo>
+        <Nav />
       </div>
       <div className="'sub-bar">
         <p>Search</p>
       </div>
-      <Nav />
     </HeaderStyles>
   );
 }
