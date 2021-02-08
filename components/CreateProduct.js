@@ -51,7 +51,7 @@ export default function CreateProduct() {
     <Form
       onSubmit={async (e) => {
         e.preventDefault();
-        console.log(inputs);
+        // console.log(inputs);
         // submit the input fields to the backend
         const res = await createProduct();
         clearForm();

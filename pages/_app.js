@@ -1,17 +1,15 @@
+import { ApolloProvider } from '@apollo/client';
 import NProgress from 'nprogress';
 import Router from 'next/router';
-import { ApolloProvider } from '@apollo/client';
-
 import Page from '../components/Page';
 import '../components/styles/nprogress.css';
 import withData from '../lib/withData';
 
-Router.onRouteChangeStart = () => NProgress.start();
-Router.onRouteChangeComplete = () => NProgress.done();
-Router.onRouteChangeError = () => NProgress.done();
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
-function myApp({ Component, pageProps, apollo }) {
-  //   console.log(apollo);
+function MyApp({ Component, pageProps, apollo }) {
   return (
     <ApolloProvider client={apollo}>
       <Page>
@@ -21,13 +19,13 @@ function myApp({ Component, pageProps, apollo }) {
   );
 }
 
-myApp.getInitialProps = async function ({ Component, ctx }) {
+MyApp.getInitialProps = async function ({ Component, ctx }) {
   let pageProps = {};
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
   pageProps.query = ctx.query;
-  return pageProps;
+  return { pageProps };
 };
 
-export default withData(myApp);
+export default withData(MyApp);
