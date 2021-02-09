@@ -33,7 +33,7 @@ const Form = styled.form`
     border: 1px solid black;
     &:focus {
       outline: 0;
-      border-color: var(--orange);
+      border-color: var(--red);
     }
   }
   button,
