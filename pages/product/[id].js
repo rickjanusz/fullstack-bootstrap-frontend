@@ -1,8 +1,10 @@
+import SingleProduct from '../../components/SingleProduct';
+
 export default function SingleProductPage({ query }) {
   console.log(query.id);
   return (
     <div>
-      <p>Hey {query.id}</p>
+      <SingleProduct id={query.id} />
     </div>
   );
 }
