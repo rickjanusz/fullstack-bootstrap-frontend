@@ -38,7 +38,7 @@ export default function SignIn() {
     e.preventDefault();
     // console.log(inputs);
     const res = await signin();
-    console.log(res);
+    // console.log(res);
     resetForm();
     // send email and password to gql
   }

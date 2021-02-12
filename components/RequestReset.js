@@ -31,7 +31,7 @@ function RequestReset() {
     e.preventDefault();
     // console.log(inputs);
     const res = await signup().catch(console.error);
-    console.log({ data, loading, error });
+    // console.log({ data, loading, error });
     resetForm();
     // send email and password to gql
   }
