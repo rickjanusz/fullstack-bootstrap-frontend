@@ -65,7 +65,6 @@ export default function Search() {
   });
   return (
     <SearchStyles>
-      HEYYYYY
       <div {...getComboboxProps()}>
         <input
           {...getInputProps({
