@@ -60,9 +60,7 @@ function Cart() {
       </header>
       <ul>
         {me.cart.map((cartItem) => (
-          <>
-            <CartItem key={cartItem.id} cartItem={cartItem} />
-          </>
+          <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </ul>
       <footer>
