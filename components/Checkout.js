@@ -65,7 +65,7 @@ function CheckoutForm() {
       type: 'card',
       card: elements.getElement(CardElement),
     });
-    console.log(paymentMethod);
+    // console.log(paymentMethod);
     // 4. handle any errors from stripe
     if (error) {
       setError(error);
@@ -78,11 +78,11 @@ function CheckoutForm() {
         token: paymentMethod.id,
       },
     });
-    console.log('Finished order');
-    console.log(order);
+    // console.log('Finished order');
+    // console.log(order);
     // 6. change the page to view the order
     router.push({
-      pathname: `/order`,
+      pathname: `/order/[id]`,
       query: { id: order.data.checkout.id },
     });
     // 7. close the cart
@@ -90,7 +90,7 @@ function CheckoutForm() {
     // 8. turn the loader off
     setLoading(false);
     nProgress.done();
-    console.log('Do some more stuffs');
+    // console.log('Do some more stuffs');
   }
   return (
     <CheckoutFormStyles onSubmit={handleSubmit}>
