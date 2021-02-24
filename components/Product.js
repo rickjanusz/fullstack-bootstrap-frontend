@@ -15,7 +15,7 @@ export default function Product({ product }) {
     fontSize: '1.5rem',
     color: 'var(--orange)',
   };
-  return (
+  return ( 
     <ItemStyles>
       <img
         src={product?.photo?.image?.publicUrlTransformed}
