@@ -1,5 +1,6 @@
-import RequestReset from '../components/RequestReset';
-import Reset from '../components/Reset';
+import PropTypes from 'prop-types'
+import RequestReset from '../components/RequestReset'
+import Reset from '../components/Reset'
 
 function ResetPage({ query }) {
   if (!query?.token) {
@@ -8,7 +9,7 @@ function ResetPage({ query }) {
         <p>Sorry, you must supply a token</p>
         <RequestReset />
       </>
-    );
+    )
   }
 
   return (
@@ -17,7 +18,11 @@ function ResetPage({ query }) {
       <Reset token={query.token} />
       {/* <Reset /> */}
     </div>
-  );
+  )
 }
 
-export default ResetPage;
+export default ResetPage
+
+ResetPage.propTypes = {
+  query: PropTypes.any,
+}
