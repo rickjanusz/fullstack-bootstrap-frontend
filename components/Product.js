@@ -12,7 +12,7 @@ export default function Product({ product }) {
   const signInButton = {
     textAlign: 'center',
     fontSize: '1.5rem',
-    color: 'var(--orange)',
+    color: 'var(--primary-main)',
   };
   return ( 
     <ItemStyles>

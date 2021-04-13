@@ -15,7 +15,7 @@ const NavStyles = styled.ul`
     align-items: center;
     position: relative;
     z-index: 1;
-    color: var(--orange);
+    color: var(--primary-main);
     text-transform: uppercase;
     font-weight: 900;
     font-size: 1em;
@@ -29,7 +29,7 @@ const NavStyles = styled.ul`
       position: absolute;
       left: 0;
       z-index: -1;
-      background-color: var(--orange);
+      background-color: var(--primary-main);
       transform: rotate(-2deg);
       transform-origin: center;
       transition: all 0.4s;
